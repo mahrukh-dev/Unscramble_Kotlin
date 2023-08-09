@@ -8,40 +8,12 @@ to make a word using all the letters from the displayed scrambled word.
 
 Used in the [Android Basics with Kotlin](https://developer.android.com/courses/android-basics-kotlin/course) course.
 
+# Functionality Implemented
 
-Pre-requisites
---------------
+## View Model Class
 
-You need to know:
-- Knowledge about Fragments.
-- How to design a layout in ConstraintLayout.
-- Able to write control flow statements (if / else, when statements).
-- Able to update the UI of the app based on user input.
-- Able to add a click listener to a Button.
+The **View Model Class** is a crucial component in our app's architecture. It serves as the bridge between the UI components and the underlying data, providing a way to store and manage UI-related data. By separating the UI logic from the data, the View Model Class enhances the app's maintainability and scalability. This class is responsible for handling business logic, data retrieval, and communication with the data source. With the View Model Class in place, our app ensures efficient data management and a responsive user interface.
 
+## Fragment Class
 
-Getting Started
----------------
-
-1. Download and run the app.
-
-License
--------
-
-Copyright (C) 2020 The Android Open Source Project.
-
-Licensed to the Apache Software Foundation (ASF) under one or more contributor
-license agreements.  See the NOTICE file distributed with this work for
-additional information regarding copyright ownership.  The ASF licenses this
-file to you under the Apache License, Version 2.0 (the "License"); you may not
-use this file except in compliance with the License.  You may obtain a copy of
-the License at
-
-  http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-License for the specific language governing permissions and limitations under
-the License.
-
+In our app, the **Fragment Class** plays a pivotal role in creating dynamic and modular UI components. Fragments are self-contained modules that represent a portion of the UI's behavior and appearance. By using fragments, we can build flexible and reusable UI components that can be combined in various ways to create a cohesive user interface. Each Fragment Class is associated with its own lifecycle, allowing us to manage its state and interactions independently. This approach facilitates better code organization and user experience customization.
