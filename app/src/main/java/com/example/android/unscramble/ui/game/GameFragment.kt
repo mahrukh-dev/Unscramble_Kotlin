@@ -54,16 +54,28 @@ class GameFragment : Fragment() {
         // Setup a click listener for the Submit and Skip buttons.
         binding.submit.setOnClickListener { onSubmitWord() }
         binding.skip.setOnClickListener { onSkipWord() }
-        // Update the UI
-        binding.score.text = getString(R.string.score, 0)
-        binding.wordCount.text = getString(
-                R.string.word_count, 0, MAX_NO_OF_WORDS)
+
 
         // Observe the scrambledCharArray LiveData, passing in the LifecycleOwner and the observer.
         viewModel.currentScrambledWord.observe(viewLifecycleOwner
         ) { newWord ->
             binding.textViewUnscrambledWord.text = newWord
         }
+
+        binding.score.text = getString(R.string.score, 0)
+        viewModel.score.observe(viewLifecycleOwner
+        ) { newScore ->
+            binding.score.text = getString(R.string.score, newScore)
+        }
+
+
+        binding.wordCount.text = getString(R.string.word_count, 0, MAX_NO_OF_WORDS)
+        viewModel.currentWordCount.observe(viewLifecycleOwner
+        ) { newWordCount ->
+            binding.wordCount.text =
+                getString(R.string.word_count, newWordCount, MAX_NO_OF_WORDS)
+        }
+
     }
 
 
@@ -117,7 +129,7 @@ class GameFragment : Fragment() {
         context?.let {
             MaterialAlertDialogBuilder(it)
                 .setTitle(getString(R.string.congratulations))
-                .setMessage(getString(R.string.you_scored, viewModel.score))
+                .setMessage(getString(R.string.you_scored, viewModel.score.value))
                 .setCancelable(false)
                 .setNegativeButton(getString(R.string.exit)) { _, _ ->
                     exitGame()
