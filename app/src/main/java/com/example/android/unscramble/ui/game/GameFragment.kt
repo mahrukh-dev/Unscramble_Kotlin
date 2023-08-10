@@ -44,10 +44,10 @@ class GameFragment : Fragment() {
         return binding.root
     }
 
-    override fun onDetach() {
-        super.onDetach()
-        Log.d("GameFragment", "GameFragment destroyed!")
-    }
+//    override fun onDetach() {
+//        super.onDetach()
+//        Log.d("GameFragment", "GameFragment destroyed!")
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -61,24 +61,24 @@ class GameFragment : Fragment() {
 
 
         // Observe the scrambledCharArray LiveData, passing in the LifecycleOwner and the observer.
-        viewModel.currentScrambledWord.observe(viewLifecycleOwner
-        ) { newWord ->
-            binding.textViewUnscrambledWord.text = newWord
-        }
+//        viewModel.currentScrambledWord.observe(viewLifecycleOwner
+//        ) { newWord ->
+//            binding.textViewUnscrambledWord.text = newWord
+//        }
 
         binding.score.text = getString(R.string.score, 0)
-        viewModel.score.observe(viewLifecycleOwner
-        ) { newScore ->
-            binding.score.text = getString(R.string.score, newScore)
-        }
+//        viewModel.score.observe(viewLifecycleOwner
+//        ) { newScore ->
+//            binding.score.text = getString(R.string.score, newScore)
+//        }
 
 
-        binding.wordCount.text = getString(R.string.word_count, 0, MAX_NO_OF_WORDS)
-        viewModel.currentWordCount.observe(viewLifecycleOwner
-        ) { newWordCount ->
-            binding.wordCount.text =
-                getString(R.string.word_count, newWordCount, MAX_NO_OF_WORDS)
-        }
+       binding.wordCount.text = getString(R.string.word_count, 0, MAX_NO_OF_WORDS)
+//        viewModel.currentWordCount.observe(viewLifecycleOwner
+//        ) { newWordCount ->
+//            binding.wordCount.text =
+//                getString(R.string.word_count, newWordCount, MAX_NO_OF_WORDS)
+//        }
 
     }
 

@@ -17,3 +17,6 @@ The **View Model Class** is a crucial component in our app's architecture. It se
 ## Fragment Class
 
 In our app, the **Fragment Class** plays a pivotal role in creating dynamic and modular UI components. Fragments are self-contained modules that represent a portion of the UI's behavior and appearance. By using fragments, we can build flexible and reusable UI components that can be combined in various ways to create a cohesive user interface. Each Fragment Class is associated with its own lifecycle, allowing us to manage its state and interactions independently. This approach facilitates better code organization and user experience customization.
+
+- changed viewBinding to dataBinding
+- implementation of liveData and mutableLiveData

@@ -1,14 +1,14 @@
 package com.example.android.unscramble.ui.game
 
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.TtsSpan
 import android.util.Log
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.android.unscramble.R
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import java.util.Collections.shuffle
-import java.util.Random
+
+
 
 class GameViewModel : ViewModel() {
 
@@ -23,8 +23,10 @@ class GameViewModel : ViewModel() {
         get() = _currentWordCount
 
     private val _currentScrambledWord = MutableLiveData<String>()
+
     val currentScrambledWord: LiveData<String>
         get() = _currentScrambledWord
+
 
     private var wordsList: MutableList<String> = mutableListOf()
     private lateinit var currentWord: String
@@ -56,10 +58,10 @@ class GameViewModel : ViewModel() {
         wordsList.clear()
         getNextWord()
     }
-    override fun onCleared() {
-        super.onCleared()
-        Log.d("GameFragment", "GameViewModel destroyed!")
-    }
+//    override fun onCleared() {
+//        super.onCleared()
+//        Log.d("GameFragment", "GameViewModel destroyed!")
+//    }
     fun nextWord(): Boolean {
         return if (_currentWordCount.value!! < MAX_NO_OF_WORDS) {
             getNextWord()
